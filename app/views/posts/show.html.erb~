@@ -1,4 +1,5 @@
-<h1 class="title>
+<div id="post_content">
+<h1 class="title">
 	<%= @post.title %><br>
         <p class-"date" style="font-weight:normal; font-size: 12px;">
 		Submitted <%= time_ago_in_words(@post.created_at) %> ago
@@ -7,3 +8,4 @@
 <p class="body">
 	<%= @post.body %>
 </p>
+</div>

@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="sidebar">
+	<!--<div id="sidebar">
 		<div id="image">
 			<%= link_to root_path do %>
 				<%= image_tag "foxy.png", size: "200x200" %>
@@ -21,7 +21,7 @@
 			<li>About</li>
 		</ul>
 	</div>
-	
+	-->
 	<div id="main_content">
 		<div id="header">
 			<p>All Posts</p>
