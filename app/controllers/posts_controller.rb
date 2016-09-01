@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :is_admin?, only: [:edit, :destroy, :new]
 
   def index
    @posts = Post.all.order('created_at DESC')
@@ -49,5 +50,10 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body)
   end
 
-
+  def is_admin?
+    if !current_user.try(:admin?)
+	flash[:danger] = "You are not allowed to create posts"
+	redirect_to root_path
+    end
+  end
 end
